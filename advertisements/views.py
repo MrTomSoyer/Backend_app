@@ -1,10 +1,11 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.throttling import AnonRateThrottle, UserRateThrottle
 from rest_framework.viewsets import ModelViewSet
 
 from advertisements.filters import AdvertisementFilter
 from advertisements.models import Advertisement
+from advertisements.permissions import IsOwnerOrReadOnly
 from advertisements.serializers import AdvertisementSerializer
 
 
@@ -19,13 +20,11 @@ class AdvertisementViewSet(ModelViewSet):
     filterset_class = AdvertisementFilter
     throttle_classes = [AnonRateThrottle, UserRateThrottle]
 
-    def get_queryset(self):
-        if self.request.user.is_authenticated:
-            return Advertisement.objects.filter(creator=self.request.user)
-        return Advertisement.objects.all()
-
     def get_permissions(self):
         """Получение прав для действий."""
-        if self.action in ["create", "update", "partial_update", "destroy"]:
+        if self.action == "create" :
             return [IsAuthenticated()]
-        return []
+        elif self.action in ["update", "partial_update", "destroy"]:
+            return [IsOwnerOrReadOnly()]
+        else:
+            return [AllowAny()]

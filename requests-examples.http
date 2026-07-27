@@ -17,7 +17,7 @@ Content-Type: application/json
 Authorization: Token d614de306f5b36adf12d0034f3ffd9e09be47b34
 
 ### Удаление объявления
-DELETE  {{baseUrl}}/advertisements/5/
+DELETE  {{baseUrl}}/advertisements/14/
 Content-Type: application/json
 Authorization: Token 974fb189d4a66ed84d54708cb6b6ff6800acc6c6
 
@@ -29,7 +29,7 @@ Content-Type: application/json
 Authorization: Token d614de306f5b36adf12d0034f3ffd9e09be47b34
 
 {
-  "title": "СТол9",
+  "title": "СТол98",
   "description": "Срочно"
 }
 
@@ -41,7 +41,7 @@ Content-Type: application/json
 Authorization: Token 974fb189d4a66ed84d54708cb6b6ff6800acc6c6
 
 {
-  "title": "Столик",
+  "title": "Столик67",
   "description": "Срочно"
 }
 ###
