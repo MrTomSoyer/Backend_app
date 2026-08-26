@@ -1,5 +1,7 @@
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.decorators import api_view
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle, UserRateThrottle
 from rest_framework.viewsets import ModelViewSet
 
@@ -28,3 +30,7 @@ class AdvertisementViewSet(ModelViewSet):
             return [IsOwnerOrReadOnly()]
         else:
             return [AllowAny()]
+
+@api_view(['GET'])
+def sample_view(request):
+    return Response({'message': 'Finish dev CI with deploy!'})
