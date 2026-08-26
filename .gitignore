@@ -1,0 +1,26 @@
+# Виртуальное окружение
+.venv/
+venv/
+env/
+
+# Файлы кэша Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Переменные окружения
+.env
+
+# База данных SQLite (если используешь для тестов)
+db.sqlite3
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Статика и медиа (если собираешь локально)
+staticfiles/
+media/
