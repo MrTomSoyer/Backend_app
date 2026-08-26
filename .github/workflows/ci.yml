@@ -50,7 +50,7 @@ jobs:
       - name: Тестирование
         run: python manage.py test
         env:
-          SECRET_KEY: ${{ env.SECRET_KEY }}ALLOWED
+          SECRET_KEY: ${{ env.SECRET_KEY }}
           DEBUG: ${{ env.DEBUG }}
           ALLOWED_HOSTS: ${{ env.ALLOWED_HOSTS }}
           DB_ENGINE: ${{ env.DB_ENGINE }}
