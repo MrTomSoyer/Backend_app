@@ -1,4 +1,3 @@
-from django.db import models
 from django_filters import rest_framework as filters, DateFromToRangeFilter
 from advertisements.models import Advertisement, AdvertisementStatusChoices
 

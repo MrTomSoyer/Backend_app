@@ -24,12 +24,13 @@ class AdvertisementViewSet(ModelViewSet):
 
     def get_permissions(self):
         """Получение прав для действий."""
-        if self.action == "create" :
+        if self.action == "create":
             return [IsAuthenticated()]
         elif self.action in ["update", "partial_update", "destroy"]:
             return [IsOwnerOrReadOnly()]
         else:
             return [AllowAny()]
+
 
 @api_view(['GET'])
 def sample_view(request):
