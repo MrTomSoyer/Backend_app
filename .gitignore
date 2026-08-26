@@ -12,8 +12,10 @@ __pycache__/
 # Переменные окружения
 .env
 
-# База данных SQLite (если используешь для тестов)
+# Базы данных (SQLite)
+*.sqlite3
 db.sqlite3
+db_local_test.sqlite3
 
 # IDE
 .idea/
