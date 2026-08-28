@@ -79,5 +79,6 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_HOST }}
-          script: cd /home/tuf/Backend_app/deploy.sh
-
+          script: |
+            cd /home/tuf/Backend_app
+            ./deploy.sh
